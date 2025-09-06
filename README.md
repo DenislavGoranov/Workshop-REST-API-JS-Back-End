@@ -1,8 +1,11 @@
 ## 🛠 Tech Stack
 
 **Frontend:** Vite, JavaScript, HTML, CSS
+
 **Backend:** Node.js, Express  
+
 **Database:** MongoDB  
+
 **Authentication & Security:** JSON Web Tokens (JWT), bcrypt  
 
 #👋 Hi there, I'm Denislav 
