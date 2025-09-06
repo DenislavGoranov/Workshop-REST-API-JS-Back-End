@@ -8,7 +8,7 @@
 
 **Authentication & Security:** JSON Web Tokens (JWT), bcrypt  
 
-#👋 Hi there, I'm Denislav 
+# 👋 Hi there, I'm Denislav 
 
 🪑 Furniture Store
 
