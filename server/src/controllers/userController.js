@@ -19,4 +19,8 @@ userController.post("/login", async (req, res) => {
     res.json(result);
 });
 
+userController.get("/logout", async (req, res) => {
+    res.json({ ok: true });
+});
+
 export default userController;
