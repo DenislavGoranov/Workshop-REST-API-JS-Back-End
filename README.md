@@ -10,7 +10,7 @@
 
 # 👋 Hi there, I'm Denislav 
 
-🪑 Furniture Store
+### 🪑 Furniture Store
 
 This project is a furniture store web application built with a REST API backend and a front-end client.
 
