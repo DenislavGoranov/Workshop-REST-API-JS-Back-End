@@ -1,6 +1,6 @@
 ## 🛠 Tech Stack
 
-**Frontend:** Vite, JavaScript, HTML, CSS ( Provided By SoftUni)
+**Frontend:** Vite, JavaScript, HTML, CSS
 **Backend:** Node.js, Express  
 **Database:** MongoDB  
 **Authentication & Security:** JSON Web Tokens (JWT), bcrypt  
