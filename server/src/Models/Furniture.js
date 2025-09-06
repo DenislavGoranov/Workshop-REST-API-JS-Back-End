@@ -26,6 +26,9 @@ const furnitureSchema = new Schema({
         type: String,
         required: true,
     },
+    material: {
+        type: String,
+    },
     _ownerId: {
         type: Types.ObjectId,
         ref: "User",
