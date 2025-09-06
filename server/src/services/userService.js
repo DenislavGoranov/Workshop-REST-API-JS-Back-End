@@ -4,7 +4,9 @@ import bcrypt from "bcrypt";
 
 export default {
     async register(userData) {
-        const existingEmail = User.find({ email: userData.email });
+        const existingEmail = await User.findOne({ email: userData.email });
+
+        console.log(existingEmail);
 
         if (existingEmail) {
             throw new Error("Email already exists!");
