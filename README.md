@@ -1,6 +1,6 @@
 ## 🛠 Tech Stack
 
-**Frontend:** Vite, JavaScript, HTML, CSS  
+**Frontend:** Vite, JavaScript, HTML, CSS ( Provided By SoftUni)
 **Backend:** Node.js, Express  
 **Database:** MongoDB  
 **Authentication & Security:** JSON Web Tokens (JWT), bcrypt  
@@ -23,6 +23,9 @@ This project is a furniture store web application built with a REST API backend 
 
 The app includes form validation, session handling, and dynamic navigation based on user state.
 
+## 📌 Note
+The **frontend client was provided by SoftUni** as part of the course materials.  
+My task in this project was to **implement the backend (REST API)** that connects to the client, handles authentication, validation, and database operations.
 
 ## Startup Project
 
