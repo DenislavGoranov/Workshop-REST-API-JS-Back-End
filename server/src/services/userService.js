@@ -25,11 +25,12 @@ export default {
         };
     },
     async login(userData) {
-        const user = await User.find({ email: userData.email });
+        const user = await User.findOne({ email: userData.email });
 
         if (!user) {
             throw new Error("Invalid Email or Password!");
         }
+
         const isValid = await bcrypt.compare(userData.password, user.password);
 
         if (!isValid) {
@@ -39,8 +40,8 @@ export default {
         const token = userUtils.getToken(user);
 
         return {
-            _id: createdUser.id,
-            email: createdUser.email,
+            _id: user.id,
+            email: user.email,
             accessToken: token,
         };
     },
