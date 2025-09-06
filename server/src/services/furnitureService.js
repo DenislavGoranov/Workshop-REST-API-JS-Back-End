@@ -4,8 +4,8 @@ export default {
     getAll() {
         return Furniture.find({});
     },
-    create(furnitureData) {
-        return Furniture.create(furnitureData);
+    create(furnitureData, userId) {
+        return Furniture.create({ ...furnitureData, _ownerId: userId });
     },
     getById(furnitureId) {
         return Furniture.findById(furnitureId);

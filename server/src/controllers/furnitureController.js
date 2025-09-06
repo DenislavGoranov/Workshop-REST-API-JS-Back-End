@@ -12,7 +12,12 @@ furnitureController.get("/", async (req, res) => {
 furnitureController.post("/", async (req, res) => {
     const furnitureData = req.body;
 
-    const createdFurniture = await furnitureService.create(furnitureData);
+    const userId = req.user.id;
+
+    const createdFurniture = await furnitureService.create(
+        furnitureData,
+        userId
+    );
 
     res.json(createdFurniture);
 });
