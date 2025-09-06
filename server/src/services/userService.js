@@ -6,8 +6,6 @@ export default {
     async register(userData) {
         const existingEmail = await User.findOne({ email: userData.email });
 
-        console.log(existingEmail);
-
         if (existingEmail) {
             throw new Error("Email already exists!");
         }

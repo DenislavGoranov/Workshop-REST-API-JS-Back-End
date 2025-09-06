@@ -30,4 +30,13 @@ furnitureController.get("/:furnitureId", async (req, res) => {
     res.json(furniture);
 });
 
+furnitureController.put("/:furnitureId", async (req, res) => {
+    const furnitureId = req.params.furnitureId;
+    const updatedFurnitureData = req.body;
+
+    await furnitureService.update(furnitureId, updatedFurnitureData);
+
+    res.json({ ok: true });
+});
+
 export default furnitureController;

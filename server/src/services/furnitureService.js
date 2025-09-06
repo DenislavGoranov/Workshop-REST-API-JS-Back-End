@@ -10,4 +10,7 @@ export default {
     getById(furnitureId) {
         return Furniture.findById(furnitureId);
     },
+    update(furnitureId, furnitureData) {
+        return Furniture.findByIdAndUpdate(furnitureId, furnitureData);
+    },
 };
