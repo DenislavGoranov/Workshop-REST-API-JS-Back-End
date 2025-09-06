@@ -7,4 +7,7 @@ export default {
     create(furnitureData) {
         return Furniture.create(furnitureData);
     },
+    getById(furnitureId) {
+        return Furniture.findById(furnitureId);
+    },
 };
