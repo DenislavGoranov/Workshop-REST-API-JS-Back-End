@@ -1,28 +1,28 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-try {
-    mongoose.connect("mongodb://localhost:27017", {
-        dbName: "Furniture Workshop",
-    });
-    console.log("Successfully connected to DB");
-} catch (error) {
-    console.log("Can't connect to DB");
-}
+import routes from "./routes.js";
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+mongoose
+    .connect("mongodb://localhost:27017/FurnitureWorkshop")
+    .then(() => console.log("✅ Successfully connected to DB"))
+    .catch((error) => console.error("❌ Can't connect to DB:", error.message));
+
+app.use(routes);
+
 app.get("/", (req, res) => {
-    res.json();
+    res.send("Server is running!");
 });
 
 app.get("/data/catalog", (req, res) => {
-    res.json({});
+    res.json([]);
 });
 
-app.listen(3030, () =>
-    console.log("Server is listening on http://localhost:3030")
-);
+app.listen(3030, () => {
+    console.log("🚀 Server is listening on http://localhost:3030");
+});
