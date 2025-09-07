@@ -4,47 +4,69 @@ import furnitureService from "../services/furnitureService.js";
 const furnitureController = Router();
 
 furnitureController.get("/", async (req, res) => {
-    const furniture = await furnitureService.getAll();
+    try {
+        const furniture = await furnitureService.getAll();
 
-    res.json(furniture);
+        res.json(furniture);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
 });
 
 furnitureController.post("/", async (req, res) => {
     const furnitureData = req.body;
-
     const userId = req.user.id;
+    try {
+        const createdFurniture = await furnitureService.create(
+            furnitureData,
+            userId
+        );
 
-    const createdFurniture = await furnitureService.create(
-        furnitureData,
-        userId
-    );
-
-    res.json(createdFurniture);
+        res.json(createdFurniture);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
 });
 
 furnitureController.get("/:furnitureId", async (req, res) => {
     const furnitureId = req.params.furnitureId;
+    try {
+        const furniture = await furnitureService.getById(furnitureId);
 
-    const furniture = await furnitureService.getById(furnitureId);
-
-    res.json(furniture);
+        res.json(furniture);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
 });
 
 furnitureController.put("/:furnitureId", async (req, res) => {
     const furnitureId = req.params.furnitureId;
     const updatedFurnitureData = req.body;
 
-    await furnitureService.update(furnitureId, updatedFurnitureData);
+    try {
+        await furnitureService.update(furnitureId, updatedFurnitureData);
 
-    res.json({ ok: true });
+        res.json({ ok: true });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
 });
 
 furnitureController.delete("/:furnitureId", async (req, res) => {
     const furnitureId = req.params.furnitureId;
 
-    await furnitureService.delete(furnitureId);
+    try {
+        await furnitureService.delete(furnitureId);
 
-    res.json({ ok: true });
+        res.json({ ok: true });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: err.message });
+    }
 });
 
 export default furnitureController;
